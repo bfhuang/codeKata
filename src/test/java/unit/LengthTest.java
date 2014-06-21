@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static unit.LengthUnit.FEET;
 import static unit.LengthUnit.MILE;
 import static unit.LengthUnit.YARD;
 
@@ -54,5 +55,15 @@ public class LengthTest {
     @Test
     public void should_1759_yards_not_equal_1_mile() {
         assertThat(new Length(1759, YARD), not(new Length(1, MILE)));
+    }
+
+    @Test
+    public void should_2_feet_equal_2_feet() {
+        assertThat(new Length(2, FEET), is(new Length(2, FEET)));
+    }
+
+    @Test
+    public void should_3_feet_equals_1_yard() {
+        assertThat(new Length(3,FEET), is(new Length(1, YARD)));
     }
 }
