@@ -2,9 +2,11 @@ package unit;
 
 public class Mile {
     private final int value;
+    private final LengthUnit unit;
 
-    public Mile(int value) {
+    public Mile(int value, LengthUnit unit) {
         this.value = value;
+        this.unit = unit;
     }
 
     @Override
