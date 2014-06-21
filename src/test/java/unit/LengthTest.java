@@ -40,4 +40,19 @@ public class LengthTest {
     public void should_3_yards_not_equal_2_yards() {
         assertThat(new Length(3, YARD), not(new Length(2, YARD)));
     }
+
+    @Test
+    public void should_1_mile_equal_1760_yards() {
+        assertThat(new Length(1, MILE), is(new Length(1760,YARD)));
+    }
+
+    @Test
+    public void should_1761_yards_not_equal_1_mile() {
+        assertThat(new Length(1761, YARD), not(new Length(1, MILE)));
+    }
+
+    @Test
+    public void should_1759_yards_not_equal_1_mile() {
+        assertThat(new Length(1759, YARD), not(new Length(1, MILE)));
+    }
 }

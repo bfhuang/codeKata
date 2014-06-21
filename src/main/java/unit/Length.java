@@ -14,9 +14,9 @@ public class Length {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Length mile = (Length) o;
+        Length length = (Length) o;
 
-        if (value != mile.value) return false;
+        if (retrieveBaseUnitLength() != length.retrieveBaseUnitLength()) return false;
 
         return true;
     }
@@ -24,5 +24,9 @@ public class Length {
     @Override
     public int hashCode() {
         return value;
+    }
+
+    public int retrieveBaseUnitLength() {
+        return value * unit.getTimesOfBaseUnit();
     }
 }
