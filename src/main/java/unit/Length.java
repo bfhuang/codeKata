@@ -22,7 +22,6 @@ public class Length extends Measurement {
         Length result = new Length(retrieveBaseUnitValue() + length.retrieveBaseUnitValue(),
                 getBaseUnit());
         return result.upgrade();
-
     }
 
 }

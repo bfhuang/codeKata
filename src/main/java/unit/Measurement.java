@@ -35,5 +35,4 @@ abstract class  Measurement {
     Unit getUnit() {
         return unit;
     }
-
 }
