@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by twer on 6/21/14.
  */
-enum LengthUnit {
+enum LengthUnit implements Unit {
     FEET(1),
     YARD(3*FEET.timesOfBaseUnit),
     MILE(1760*YARD.timesOfBaseUnit);
@@ -21,11 +21,11 @@ enum LengthUnit {
         return timesOfBaseUnit;
     }
 
-    static LengthUnit getBaseUnit() {
+    public static LengthUnit getBaseUnit() {
         return FEET;
     }
 
-    static List<LengthUnit> valuesByDecrease() {
+    public static List<LengthUnit> valuesByDecrease() {
        List<LengthUnit> units = new ArrayList<LengthUnit>();
 
         for(LengthUnit unit:values()){
