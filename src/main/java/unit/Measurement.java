@@ -1,6 +1,8 @@
 package unit;
 
-abstract class Measurement {
+import static unit.LengthUnit.getBaseUnit;
+
+abstract class  Measurement {
     protected final int value;
     protected final Unit unit;
 
@@ -16,7 +18,7 @@ abstract class Measurement {
 
         Measurement measurement = (Measurement) o;
 
-        if (retrieveBaseUnitLength() != measurement.retrieveBaseUnitLength()) return false;
+        if (retrieveBaseUnitValue() != measurement.retrieveBaseUnitValue()) return false;
 
         return true;
     }
@@ -26,7 +28,7 @@ abstract class Measurement {
         return value;
     }
 
-    protected int retrieveBaseUnitLength() {
+    protected int retrieveBaseUnitValue() {
         return value * unit.getTimesOfBaseUnit();
     }
 

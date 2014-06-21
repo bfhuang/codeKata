@@ -6,8 +6,8 @@ import java.util.List;
 
 enum LengthUnit implements Unit {
     FEET(1),
-    YARD(3*FEET.timesOfBaseUnit),
-    MILE(1760*YARD.timesOfBaseUnit);
+    YARD(3 * FEET.timesOfBaseUnit),
+    MILE(1760 * YARD.timesOfBaseUnit);
     private int timesOfBaseUnit;
 
     LengthUnit(int timesOfBaseUnit) {
@@ -23,10 +23,10 @@ enum LengthUnit implements Unit {
     }
 
     public static List<LengthUnit> valuesByDecrease() {
-       List<LengthUnit> units = new ArrayList<LengthUnit>();
+        List<LengthUnit> units = new ArrayList<LengthUnit>();
 
-        for(LengthUnit unit:values()){
-            units.add(0,unit);
+        for (LengthUnit unit : values()) {
+            units.add(0, unit);
         }
         return units;
     }

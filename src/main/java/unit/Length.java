@@ -1,5 +1,6 @@
 package unit;
 
+
 import static unit.LengthUnit.getBaseUnit;
 
 public class Length extends Measurement {
@@ -10,16 +11,18 @@ public class Length extends Measurement {
 
     private Length upgrade() {
         for (Unit unit : LengthUnit.valuesByDecrease()) {
-            if (retrieveBaseUnitLength() % unit.getTimesOfBaseUnit() == 0) {
-                return new Length(retrieveBaseUnitLength() / unit.getTimesOfBaseUnit(), (LengthUnit) unit);
+            if (retrieveBaseUnitValue() % unit.getTimesOfBaseUnit() == 0) {
+                return new Length(retrieveBaseUnitValue() / unit.getTimesOfBaseUnit(), (LengthUnit) unit);
             }
         }
         return this;
     }
 
     public Length add(Length length) {
-        Length result = new Length(retrieveBaseUnitLength() + length.retrieveBaseUnitLength(), getBaseUnit());
+        Length result = new Length(retrieveBaseUnitValue() + length.retrieveBaseUnitValue(),
+                getBaseUnit());
         return result.upgrade();
+
     }
 
 }
