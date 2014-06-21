@@ -10,15 +10,17 @@ public class MileTest {
 
 
     @Test
-    public void should_3_mile_equals_3_mile() {
+    public void should_3_mile_equal_3_mile() {
         assertThat(new Mile(3), is(new Mile(3)));
     }
 
     @Test
-    public void should_3_mile_not_equals_4_miles() {
+    public void should_3_mile_not_equal_4_miles() {
         assertThat(new Mile(3), not(new Mile(4)));
     }
 
-
-
+    @Test
+    public void should_3_mile_not_equal_2_mile() {
+        assertThat(new Mile(3), not(new Mile(2)));
+    }
 }
