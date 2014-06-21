@@ -1,8 +1,5 @@
 package unit;
 
-/**
- * Created by twer on 6/22/14.
- */
 abstract class Measurement {
     protected final int value;
     protected final Unit unit;

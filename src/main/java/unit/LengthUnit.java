@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by twer on 6/21/14.
- */
 enum LengthUnit implements Unit {
     FEET(1),
     YARD(3*FEET.timesOfBaseUnit),

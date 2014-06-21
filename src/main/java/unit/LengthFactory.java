@@ -4,9 +4,6 @@ import static unit.LengthUnit.FEET;
 import static unit.LengthUnit.MILE;
 import static unit.LengthUnit.YARD;
 
-/**
- * Created by twer on 6/21/14.
- */
 public class LengthFactory {
 
     public static Length mile(int value) {
