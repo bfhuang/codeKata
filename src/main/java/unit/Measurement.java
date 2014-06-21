@@ -14,9 +14,9 @@ abstract class Measurement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Length length = (Length) o;
+        Measurement measurement = (Measurement) o;
 
-        if (retrieveBaseUnitLength() != retrieveBaseUnitLength()) return false;
+        if (retrieveBaseUnitLength() != measurement.retrieveBaseUnitLength()) return false;
 
         return true;
     }
