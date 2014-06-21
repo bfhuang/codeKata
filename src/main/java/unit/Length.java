@@ -29,4 +29,8 @@ public class Length {
     public int retrieveBaseUnitLength() {
         return value * unit.getTimesOfBaseUnit();
     }
+
+    public LengthUnit getUnit() {
+        return unit;
+    }
 }
