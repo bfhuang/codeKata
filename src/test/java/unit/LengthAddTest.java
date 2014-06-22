@@ -10,27 +10,27 @@ import static unit.LengthFactory.*;
 public class LengthAddTest {
     @Test
     public void should_1_mile_add_1_mile_equals_2_mile() {
-        assertThat(mile(1).add(mile(1)), is(mile(2)));
+        assertThat(mile(1).add(mile(1)), is(feet(1760*3*2)));
     }
 
     @Test
     public void should_1_yard_add_1_yard_equal_2_yard() {
-        assertThat(yard(1).add(yard(1)), is(yard(2)));
+        assertThat(yard(1).add(yard(1)), is(feet(6)));
     }
 
     @Test
     public void should_1_yard_add_1_mile_equal_1761_yard() {
-        assertThat(yard(1).add(mile(1)), is(yard(1761)));
+        assertThat(yard(1).add(mile(1)), is(feet(1761*3)));
     }
 
     @Test
     public void should_1_mile_add_1760_yard_equal_2_mile() {
-        assertThat(mile(1).add(yard(1760)), is(mile(2)));
+        assertThat(mile(1).add(yard(1760)), is(feet(1760*2*3)));
     }
 
     @Test
     public void should_1760_yard_add_1760_yard_equal_2_mile() {
-        assertThat(yard(1760).add(yard(1760)), is(mile(2)));
+        assertThat(yard(1760).add(yard(1760)), is(feet(1760*3*2)));
     }
 
     @Test

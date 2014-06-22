@@ -9,19 +9,9 @@ public class Length extends Measurement {
         super(value, unit);
     }
 
-    private Length upgrade() {
-        for (Unit unit : LengthUnit.valuesByDecrease()) {
-            if (retrieveBaseUnitValue() % unit.getTimesOfBaseUnit() == 0) {
-                return new Length(retrieveBaseUnitValue() / unit.getTimesOfBaseUnit(), (LengthUnit) unit);
-            }
-        }
-        return this;
-    }
-
     public Length add(Length length) {
-        Length result = new Length(retrieveBaseUnitValue() + length.retrieveBaseUnitValue(),
+        return new Length(retrieveBaseUnitValue() + length.retrieveBaseUnitValue(),
                 getBaseUnit());
-        return result.upgrade();
     }
 
     public String print(PrintStrategy printStrategy) {
