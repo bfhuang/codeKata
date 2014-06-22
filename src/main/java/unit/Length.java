@@ -24,4 +24,7 @@ public class Length extends Measurement {
         return result.upgrade();
     }
 
+    public String print(PrintStrategy printStrategy) {
+        return printStrategy.print(this);
+    }
 }
